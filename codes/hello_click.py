@@ -1,10 +1,14 @@
 import click
+import requests
 
 @click.command()
+@click.option('--username', prompt='Github username',
+              help='Github username to get repo details.')
 
-def hello():
-    """Simple program that greets NAME for a total of COUNT times."""
-    click.echo('Hello')
-
+def get_projects(username):
+    a = requests.get("https://api.github.com/users/"+username+"/repos")
+    print(a.content)
+    
 if __name__ == '__main__':
-    hello()
+    get_projects()
+
