@@ -195,3 +195,27 @@ if __name__ == '__main__':
 </pre>
 
 You got the list of repository but they have lot more data and they need to be in understood by program as object. Right now they are in json format. For handling json we have a library called json in python
+
+Lets see that..
+
+<pre>
+import click
+import requests
+import json
+
+@click.command()
+@click.option('--username', prompt='Github username',
+              help='Github username to get repo details.')
+
+def get_projects(username):
+	a = requests.get("https://api.github.com/users/"+username+"/repos")
+    data = json.loads(a.content)
+    for item in data:
+    	print item['name']
+
+if __name__ == '__main__':
+    get_projects()
+
+</pre>
+
+This will print the names of all the repos 

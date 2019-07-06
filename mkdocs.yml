@@ -6,6 +6,9 @@ nav:
   - Global Interpreter Lock: gil.md
   - Object Oriented Programming: oops.md
   - Basic Tooling for Python: tooling.md
+  - Best Practices for programming and python: best_practices.md
   - Creating a CLI application: cliapp.md
+  - Logging in application: logging.md
+
 theme: 
   name: material

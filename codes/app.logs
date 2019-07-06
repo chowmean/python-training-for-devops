@@ -1,0 +1,11 @@
+02-Jul-19 21:53:56 - Initilizing application.
+02-Jul-19 21:53:58 - Contacting github for repos.
+02-Jul-19 21:53:58 - Starting new HTTPS connection (1): api.github.com:443
+02-Jul-19 21:53:59 - https://api.github.com:443 "GET /users/chowmean/repos HTTP/1.1" 200 None
+02-Jul-19 21:53:59 - Github data received.
+02-Jul-19 21:54:25 - Initilizing application.
+02-Jul-19 21:55:47 - Initilizing application.
+02-Jul-19 21:55:49 - Contacting github for repos.
+02-Jul-19 21:55:49 - Starting new HTTPS connection (1): api.github.com:443
+02-Jul-19 21:55:50 - https://api.github.com:443 "GET /users/chowmean/repos HTTP/1.1" 200 None
+02-Jul-19 21:55:50 - Github data received.
