@@ -48,9 +48,7 @@ Here we will be creating a very basic cli app which says hello.
 
 <pre>
 import click
-
 @click.command()
-
 def hello():
     """Simple program that greets NAME for a total of COUNT times."""
     click.echo('Hello')
@@ -59,8 +57,8 @@ if __name__ == '__main__':
     hello()
 
 </pre>
-
-Run this using python filename.py and you will see hello as output. 
+Save the above snippet in file called hello.py
+Run this using python hello.py and you will see hello as output. 
 
 ### Arguments and options
 
@@ -70,7 +68,7 @@ Lets first distinguish between these two.
 
 *Arguments*	 work similarly to options but are positional. They also only support a subset of the features of options due to their syntactical nature. 
 
-Arguements cannot do anything more than options so we will have a look at options in detail
+Arguments cannot do anything more than options so we will have a look at options in detail
 
 #### Options 
 
@@ -78,22 +76,21 @@ For taking options click provide a very easy options. Have a look at code below
 
 <pre>
 import click
-
 @click.command()
 @click.option('--name', prompt='Your name',
               help='The person to greet.')
-def hello( name):
-    for x in range():
+def hello(name):
+    for x in range(10):
         click.echo('Hello %s!' % name)
 
 if __name__ == '__main__':
     hello()
 </pre>
 
-Here you can take your name as CLI arguement and then this program will print hello your_name. Run this command to run it.
+Here you can take your name as CLI argument and then this program will print hello your_name. Run this command to run it.
 
 <pre>
-python filename.py youname
+python hello.py --name=conan
 </pre>
 
 Now you can divide options in two type required and optional ones. 
@@ -101,13 +98,14 @@ For that you only have to pass *required=True* and that option will be mandatory
 
 <pre>
 import click
-
 @click.command()
 @click.option('--name', prompt='Your name',
               help='The person to greet.', required=True)
-def hello( name):
-    for x in range():
-        click.echo('Hello %s!' % name)
+@click.option('--age', prompt='Your age',
+              help="The person's age.", default=35)
+def hello(name, age):
+    for x in range(1):
+        click.echo('%s is %s years old!!!' % (name,age))
 
 if __name__ == '__main__':
     hello()
@@ -131,11 +129,43 @@ value = click.prompt('Please enter your nanme', type=string)
 Confirmation prompts are for confirming if you want to continue. 
 
 <pre>
-if click.confirm('Do you want to continue?'):
-    click.echo('Well done!')
+import click
+@click.command()
+def hello():
+    if click.confirm('Do you want to continue?'):
+    	click.echo('user entered yes')
+    else:
+    	click.echo('user entered No')
+
+if __name__ == '__main__':
+    hello()
+</pre>
+#Examples:
+this example explains about hiding the prompted value(useful in case of  passwords)
+<pre>
+import click
+@click.command()
+@click.option('--password', prompt=True, hide_input=True,
+              confirmation_prompt=True)
+def encrypt(password):
+    click.echo('Encrypting password to %s' % password.encode('rot13'))
+if __name__ == '__main__':
+    encrypt()
 </pre>
 
 You can give option `abort=True`. If you want to abort on not confirming. 
+<pre>
+import click
+@click.command()
+def hello():
+    if click.confirm('Do you want to continue?', default=True, abort=True):
+    	click.echo('user entered yes')
+    else:
+    	click.echo('user entered No')
+    print "!!!Yahhoo... user allowed me to get execute by entering Yes"	
+if __name__ == '__main__':
+    hello()
+</pre>
 
 ## Click application to pull repos
 
@@ -148,7 +178,6 @@ For first part we will get username like below
 
 <pre>
 import click
-
 @click.command()
 @click.option('--username', prompt='Github username',
               help='Github username to get repo details.')
@@ -180,7 +209,6 @@ Look at the code below
 <pre>
 import click
 import requests
-
 @click.command()
 @click.option('--username', prompt='Github username',
               help='Github username to get repo details.')
@@ -202,7 +230,6 @@ Lets see that..
 import click
 import requests
 import json
-
 @click.command()
 @click.option('--username', prompt='Github username',
               help='Github username to get repo details.')
