@@ -9,6 +9,8 @@ nav:
   - Best Practices for programming and python: best_practices.md
   - Creating a CLI application: cliapp.md
   - Logging in application: logging.md
+  - Decorators: decorators.md
+
 
 theme: 
   name: material
