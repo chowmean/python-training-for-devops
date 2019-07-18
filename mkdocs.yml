@@ -10,6 +10,8 @@ nav:
   - Creating a CLI application: cliapp.md
   - Logging in application: logging.md
   - Decorators: decorators.md
+  - Python internals: internals.md
+  - images: images
 
 
 theme: 
