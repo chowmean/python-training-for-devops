@@ -11,7 +11,7 @@ nav:
   - Logging in application: logging.md
   - Decorators: decorators.md
   - Python internals: internals.md
-  - images: images
+  - flask: flask.md
 
 
 theme: 
