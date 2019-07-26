@@ -102,5 +102,10 @@ Interestingly, it often runs faster than the standard implementation of Python, 
 3. But, if a Python module is imported, a .pyc file for the module is generated which contains its Byte code.
 Thus, when the module is imported next time, the byte code from .pyc file is used, hence skipping the compilation step!
 
+###see compiled files:
+<pre>
+  python -m py_compile hello.py
+</pre> 
+
 ###Question:
 when we update source code of imported module, how does interpreter picks up that updated code?  
