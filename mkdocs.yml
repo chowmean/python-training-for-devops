@@ -11,7 +11,9 @@ nav:
   - Logging in application: logging.md
   - Decorators: decorators.md
   - Python internals: internals.md
-  - flask: flask.md
+  - Flask: flask.md
+  - Python With Mysql: flaskdb.md
+  - Flask and ORM: flaskandorm.md
 
 
 theme: 

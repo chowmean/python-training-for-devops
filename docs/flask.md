@@ -1,4 +1,4 @@
-#flask
+#Flask
 ###A Minimal Application
 A minimal Flask application looks something like this:
 
