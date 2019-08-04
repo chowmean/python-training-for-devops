@@ -30,3 +30,16 @@ db.session.commit()
 
 print(User.query.all())
 </pre>
+
+Lets see what is happening above. 
+First two line from import flask and sql alchemy
+
+Next we created application and defined app.config for sql alchemy. It has to be this variable name only `app.config['SQLALCHEMY_DATABASE_URI']`. Then we intialized db instance. 
+
+Next we have created User class. 
+
+Then we created an instance of User and added it to the session and then commited it. 
+
+This is how data is saved. 
+
+Next we can query it `using the User.query.all()` .
