@@ -16,6 +16,7 @@ nav:
   - Flask and ORM: flaskandorm.md
   - Exposing metrics with python: metrics.md
   - Creating a python package: package.md
+  - Lets create and application: app.md
 
 
 theme: 
