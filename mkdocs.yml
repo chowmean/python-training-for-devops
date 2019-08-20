@@ -17,6 +17,7 @@ nav:
   - Exposing metrics with python: metrics.md
   - Creating a python package: package.md
   - Lets create and application: app.md
+  - Iterators and how to create one: iterators.md
 
 
 theme: 
