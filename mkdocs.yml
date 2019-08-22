@@ -18,7 +18,7 @@ nav:
   - Creating a python package: package.md
   - Lets create and application: app.md
   - Iterators and how to create one: iterators.md
-
+  - Generators: generators.md
 
 theme: 
   name: material
