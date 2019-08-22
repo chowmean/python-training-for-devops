@@ -17,12 +17,15 @@ So what is happening here is we have created a generator using yeild. Yeild crea
 
 In the above function we have created a generator that is generating list from 0,9999. 
 
+
 ## Advantages of generators
 
 Generator have following advantages
 - They don't process at the same time but does lazy loading so when the value is required it gets executed and gets the data. 
 - They help a lot in saving memory by not generating and saving things in memory all at once.
 
+
+### Memory Efficient and lazy processing.
 Lets have a look at the code below. 
 
 <pre>
@@ -40,3 +43,23 @@ print(getsizeof(a))
 </pre>
 
 If you can run this program you can see the difference between memory consumption in both the cases. Lets discuss why there is so much difference in memroy consumption here. 
+
+Memory difference is because there is no acutal calculation and storing of the values in the memory. 
+
+### Infinite Sequence of data
+
+It is easy to have an infinite sequence of data with generators because of the memory advantage otherwise for infite sequence of data you need infinite RAM. 
+
+
+### Iterator by default
+
+Generators automatically define `__iter__` and `__next__`. Thus these can be used directly with `for-in` and has iterators. You can get the iterators using `iter` key word.
+
+## Python generator experssion
+
+<pre>
+a = (x**2 for x in my_list)
+</pre>
+Above code creates generator, what you need to do this is use `()` with your normal expression. 
+
+This was introduction to generators. These are very powerful and you can use them to accomplish different tasks. Now its upto you how you will dig deeper and use it. 
