@@ -4,4 +4,39 @@ Generators are just like normal functions, what makes functions generators in yi
 
 ## What is yield?
 
-Yield is a key word that is used to return the value only, the difference is it is used to induce the lazy processing capability. What is does is it returns the state of the functions at that time and save it locally so that it can be resumed from there in the next iteration.  
+Yield is a key word that is used to return the value only, the difference is it is used to induce the lazy processing capability. What is does is it returns the state of the functions at that time and save it locally so that it can be resumed from there in the next iteration. 
+So it actually doesn't generate any value but save the function state so that it can be generated on the run time. Have a look at the code below 
+
+<pre>
+def testgen():
+    for i in range(10000):
+        yield i
+</pre>
+
+So what is happening here is we have created a generator using yeild. Yeild creates an itertor by itself so it works out of the box from with `for-in`
+
+In the above function we have created a generator that is generating list from 0,9999. 
+
+## Advantages of generators
+
+Generator have following advantages
+- They don't process at the same time but does lazy loading so when the value is required it gets executed and gets the data. 
+- They help a lot in saving memory by not generating and saving things in memory all at once.
+
+Lets have a look at the code below. 
+
+<pre>
+from sys import getsizeof
+
+def tesgen():
+        for i in range(10000):
+                yield i
+
+b = [x for x in range(10000)]
+print(getsizeof(b))
+
+a = tesgen()
+print(getsizeof(a))
+</pre>
+
+If you can run this program you can see the difference between memory consumption in both the cases. Lets discuss why there is so much difference in memroy consumption here. 
