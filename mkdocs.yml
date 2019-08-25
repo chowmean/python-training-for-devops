@@ -19,6 +19,7 @@ nav:
   - Lets create and application: app.md
   - Iterators and how to create one: iterators.md
   - Generators: generators.md
+  - Threading and Multiprocessing: threading.md
 
 theme: 
   name: material
