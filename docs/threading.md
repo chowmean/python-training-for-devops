@@ -1,4 +1,4 @@
-.ding and multiprocessing in Python
+# Threading and multiprocessing in Python
 
 Threading module implments basic threading in python. Using threading is not an easy task. Threading wants you to write your code in a concurrent design so that it can run parallely on your CPU.
 
