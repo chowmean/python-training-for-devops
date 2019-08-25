@@ -134,3 +134,15 @@ if __name__ == "__main__":
 When you run this program you can see the time taken by both the program to complete the execution. Try and explain why the time difference happened. 
 
 Thinking in term of context swtiches, size of thread and process and how GIL works will help you in defining why the time difference in there. 
+
+## Lets talk about context switching, weight of process and thread.
+
+### In case of IO bound process
+
+In this scenario since CPU is taken away from the process which is waiting for an IO process. So in this scenario threads can be better since context switching for threads is lighter operation as comparision to context switching in case of process. 
+
+### In case of CPU intensice process
+
+In this scenario process will perform better when the amount of CPU task being done is huge otherwise you can see similar performance in the smaller tasks because the heavier context switches for process will compensate for the performance gain that it gets from parallel processing in CPU. 
+
+Again if the number of processes are very large their will be huge number of context switches which will again cost and this cost can be make your multiprocessed program slow. 
