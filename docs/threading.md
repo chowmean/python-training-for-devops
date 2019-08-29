@@ -100,11 +100,13 @@ def process_function(name):
 if __name__ == "__main__":
     start_time = datetime.now()
     format = "%(asctime)s: %(message)s"
-
+    a = []
     for i in range (100):
         x = multiprocessing.Process(target=process_function, args=(i, ))
         x.start()
-        x.join()
+        a.append(x)
+    for i in a:
+        i.join()
     end_time = datetime.now()
     print(end_time-start_time)
 </pre>
@@ -125,12 +127,13 @@ def thread_function(name):
 if __name__ == "__main__":
     start_time = datetime.now()
     format = "%(asctime)s: %(message)s"
-    
+    a = []
     for i in range (100):
         x = threading.Thread(target=thread_function, args=(i,))
         x.start()
-        x.join()
-    
+        a.append(x)
+    for i in a:
+        i.join()
     end_time = datetime.now()
     print(end_time-start_time)
 
