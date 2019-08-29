@@ -35,10 +35,13 @@ if __name__ == "__main__":
                         datefmt="%H:%M:%S")
 
     logging.info("Main    : before creating thread")
+    a = []
     for i in range (3):
         x = threading.Thread(target=function, args=(i,))
         x.start()
-        x.join()
+        a.append(x)
+    for i in a:
+        i.join()
 </pre>
 
 In the above code we have imported thread. Then created 3 threads and started them and after that joined them so that the execute will proceed after that only once all the threads are completed. 
@@ -67,10 +70,13 @@ if __name__ == "__main__":
                         datefmt="%H:%M:%S")
 
     logging.info("Main    : before creating thread")
+    a= []
     for i in range (3):
         x = multiprocessing.Process(target=function, args=(i, ))
         x.start()
-        x.join()
+        a.append(x)
+    for i in a:
+        i.join()
 </pre>
 
 ## Threading vs Multiprocessing in python
